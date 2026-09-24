@@ -1,4 +1,6 @@
+
 <template>
+  <!-- CARRUSEL FULLSCREEN -->
   <div>
     <!-- CARRUSEL FULLSCREEN -->
     <main class="main-carousel">
@@ -22,7 +24,7 @@
 
           <img
             v-else
-            :src="makeImageSrc(slide.image)"
+            :src="makeImageSrc(slide.image ?? '')"
             :alt="slide.title"
             class="carousel-media"
           />
@@ -87,7 +89,6 @@
         SCROLL
       </div>
     </main>
-
   </div>
 </template>
 
@@ -117,7 +118,8 @@ const slides = [
     image: 'fondonosotros.jpeg',
     eyebrow: 'SOBRE NOSOTROS',
     title: 'Calidad que se ve.',
-    description: 'Calidad premium y precisión milimétrica en cada impresión desde 1997.',
+    description:
+      'Calidad premium y precisión milimétrica en cada impresión desde 1997.',
     buttonText: 'Conozca la Empresa',
     buttonLink: '/beta'
   },
@@ -127,7 +129,8 @@ const slides = [
     image: 'fondoploteados.jpeg',
     eyebrow: 'SERVICIOS CORPORATIVOS',
     title: 'Precisión en cada detalle.',
-    description: 'Ingeniería en ploteado, corte computarizado y montaje industrial.',
+    description:
+      'Ingeniería en ploteado, corte computarizado y montaje industrial.',
     buttonText: 'Explorar Servicios',
     buttonLink: '/plotear'
   },
@@ -157,7 +160,8 @@ const slides = [
     image: 'pisos 2.jpeg',
     eyebrow: 'ALTO TRÁNSITO',
     title: 'Resistencia industrial.',
-    description: 'Soluciones pensadas para soportar las condiciones más exigentes.',
+    description:
+      'Soluciones pensadas para soportar las condiciones más exigentes.',
     buttonText: 'Ver Catálogo',
     buttonLink: '/ventas'
   },
@@ -167,7 +171,8 @@ const slides = [
     image: 'pisos (9).jpeg',
     eyebrow: 'DISEÑO ESPECIAL',
     title: 'Diseño que transforma espacios.',
-    description: 'Terminaciones especiales adaptadas a cada proyecto.',
+    description:
+      'Terminaciones especiales adaptadas a cada proyecto.',
     buttonText: 'Ver Catálogo',
     buttonLink: '/ventas'
   },
@@ -177,7 +182,8 @@ const slides = [
     image: 'pisos (7).jpeg',
     eyebrow: 'REVESTIMIENTOS PREMIUM',
     title: 'Terminaciones de alto nivel.',
-    description: 'Revestimientos premium para proyectos que requieren máxima calidad.',
+    description:
+      'Revestimientos premium para proyectos que requieren máxima calidad.',
     buttonText: 'Ver Catálogo',
     buttonLink: '/ventas'
   }
@@ -201,7 +207,8 @@ function nextSlide() {
 }
 
 function previousSlide() {
-  currentSlide.value = (currentSlide.value - 1 + slides.length) % slides.length
+  currentSlide.value =
+    (currentSlide.value - 1 + slides.length) % slides.length
   restartCarousel()
 }
 
@@ -247,7 +254,9 @@ onMounted(() => {
     }
   )
 
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el))
+  document
+    .querySelectorAll('.fade-in')
+    .forEach(el => observer.observe(el))
 })
 
 onBeforeUnmount(() => {
@@ -480,7 +489,11 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, transparent 40%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.75) 0%,
+    transparent 40%
+  );
 }
 
 .carousel-content {
