@@ -1,0 +1,23 @@
+:root {
+    --bg-primary: #0a0a0c;
+    --bg-surface: #121215;
+    --bg-overlay: rgba(10, 10, 12, 0.75);
+    --accent: #ffffff;
+    --accent-muted: #c7c7c7;
+    --text-main: #f4f4f5;
+    --text-muted: #a1a1aa;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --header-height: 90px;
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}

@@ -1,0 +1,878 @@
+<template>
+  <div class="pagina">
+    <!-- Navigation -->
+    <nav :class="{ scrolled: isScrolled }" class="navbar">
+      <div class="nav-container">
+        <div class="logo">
+          <span class="logo-text">BETA</span>
+          <span class="logo-subtitle">GRÁFICA</span>
+        </div>
+        
+        <button class="mobile-toggle" @click="mobileMenuOpen = !mobileMenuOpen">
+          <span v-if="!mobileMenuOpen">☰</span>
+          <span v-else>✕</span>
+        </button>
+
+        <ul :class="{ 'menu-open': mobileMenuOpen }">
+          <li v-for="item in menuItems" :key="item.id">
+            <a :href="`#${item.id}`" @click="mobileMenuOpen = false">
+              {{ item.label }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Hero Section con Video -->
+    <section id="inicio" class="hero-section" :class="{ visible: visibleSections.has('inicio') }">
+      <div class="video-container">
+        <video autoplay muted loop playsinline class="video-bg">
+          <source src="/imagenes/videobetapagina.mp4" type="video/mp4" />
+        </video>
+        <div class="video-overlay"></div>
+      </div>
+      
+      <div class="hero-content">
+        <div class="logo-hero">
+          <img src="/imagenes/betalogo.png" alt="Beta Gráfica" class="logo-img">
+        </div>
+        <h1 class="hero-title">
+          <span class="gradient-text">Diseño que</span>
+          <span class="gradient-text">Inspira</span>
+        </h1>
+        <p class="hero-subtitle">Transformamos tus ideas en realidad visual</p>
+        <div class="hero-cta">
+          <a href="#servicios" class="btn-primary">
+            Descubre más
+            <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="sobre-nosotros" class="section-about" :class="{ visible: visibleSections.has('sobre-nosotros') }">
+      <div class="section-bg" style="background-image: url('/imagenes/fondonosotros.jpeg')"></div>
+      <div class="section-overlay"></div>
+      
+      <div class="container">
+        <div class="content-box">
+          <div class="section-badge">Nuestra Historia</div>
+          <h2 class="section-title">Sobre Nosotros</h2>
+          <div class="decorative-line"></div>
+          <p class="section-text">
+            Arrancamos en el año 2000 con el fin de crear una empresa gráfica de identificación de
+            vehículos local, pero decidimos salir de la ciudad para comenzar a crecer. Hoy somos 
+            referentes en diseño gráfico, brindando soluciones innovadoras y de alta calidad.
+          </p>
+          <router-link to="/sobre-nosotros" class="btn-secondary">
+            Conocer más
+            <span class="btn-icon">→</span>
+          </router-link>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section-services" :class="{ visible: visibleSections.has('servicios') }">
+      <div class="section-bg" style="background-image: url('/imagenes/fondoploteados.jpeg')"></div>
+      <div class="section-overlay"></div>
+      
+      <div class="container">
+        <div class="content-box">
+          <div class="section-badge">Lo que hacemos</div>
+          <h2 class="section-title">Servicios</h2>
+          <div class="decorative-line"></div>
+          
+          <div class="services-grid">
+            <div v-for="(service, index) in services" :key="index" class="service-card">
+              <div class="service-icon">{{ service.icon }}</div>
+              <h3>{{ service.title }}</h3>
+            </div>
+          </div>
+          
+          <p class="section-text">
+            Vinilos, ploteados, rotulaciones, letras corpóreas y mucho más...
+          </p>
+          <router-link to="/servicios" class="btn-secondary">
+            Ver todos los servicios
+            <span class="btn-icon">→</span>
+          </router-link>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section-contact" :class="{ visible: visibleSections.has('contacto') }">
+      <div class="section-bg" style="background-image: url('/imagenes/fondocontacto.jpeg')"></div>
+      <div class="section-overlay"></div>
+      
+      <div class="container">
+        <div class="content-box">
+          <div class="section-badge">Hablemos</div>
+          <h2 class="section-title">Contacto</h2>
+          <div class="decorative-line"></div>
+          <p class="section-text">
+            Escribinos para crear algo inolvidable juntos.
+          </p>
+          
+          <div class="contact-info">
+            <a href="mailto:betagrafica60@gmail.com" class="contact-link">
+              <span class="contact-icon">✉</span>
+              betagrafica60@gmail.com
+            </a>
+            <a href="tel:+5493564652137" class="contact-link">
+              <span class="contact-icon">📞</span>
+              +54 9 3564 65-2137
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <!-- Dirección -->
+          <div class="footer-col">
+            <h3 class="footer-title">DIRECCIÓN</h3>
+            <div class="footer-content">
+              <p class="mb-2"><strong>Casa Central</strong></p>
+              <a href="https://maps.app.goo.gl/QS9dXPSHPvULDrhJ9" class="footer-link">
+                Venier 2305 - Parque Industrial
+              </a>
+              <p class="mt-4"><strong>Planta Industrial</strong></p>
+              <p>San Francisco<br>Córdoba, Argentina</p>
+            </div>
+          </div>
+
+          <!-- Contacto -->
+          <div class="footer-col">
+            <h3 class="footer-title">CONTACTO</h3>
+            <div class="footer-content">
+              <p class="mb-2">+54 9 3564 65-2137</p>
+              <a href="mailto:betagrafica60@gmail.com" class="footer-link">
+                betagrafica60@gmail.com
+              </a>
+            </div>
+          </div>
+
+          <!-- Enlaces -->
+          <div class="footer-col">
+            <h3 class="footer-title">NAVEGACIÓN</h3>
+            <ul class="footer-links">
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Redes Sociales -->
+          <div class="footer-col">
+            <h3 class="footer-title">SÍGUENOS</h3>
+            <div class="social-links">
+              <a href="https://www.facebook.com/share/1BDXuPqTHn/" class="social-btn">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.instagram.com/beta_grafica/?next=%2F" class="social-btn">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="https://www.tiktok.com/@beta.grafica?_t=ZM-909zpyOoHTI&_r=1" class="social-btn">
+                <i class="fab fa-tiktok"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Beta Gráfica. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </div>
+</template>
+
+<script setup>
+import { onMounted, onBeforeUnmount, ref } from 'vue'
+
+const isScrolled = ref(false)
+const mobileMenuOpen = ref(false)
+const visibleSections = ref(new Set())
+
+const menuItems = [
+  { id: 'inicio', label: 'Inicio' },
+  { id: 'sobre-nosotros', label: 'Sobre Nosotros' },
+  { id: 'servicios', label: 'Servicios' },
+  { id: 'contacto', label: 'Contacto' }
+]
+
+const services = [
+  { icon: '🎨', title: 'Vinilos' },
+  { icon: '🚗', title: 'Ploteados' },
+  { icon: '📝', title: 'Rotulaciones' },
+  { icon: '✨', title: 'Letras Corpóreas' }
+]
+
+let observer
+
+const handleScroll = () => {
+  isScrolled.value = window.scrollY > 50
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+
+  observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        visibleSections.value.add(entry.target.id)
+      }
+    })
+  }, { threshold: 0.2 })
+
+  const sections = document.querySelectorAll('section')
+  sections.forEach(section => observer.observe(section))
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', handleScroll)
+  if (observer) observer.disconnect()
+})
+</script>
+
+<style scoped>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pagina {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+}
+
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 1rem 0;
+  box-shadow: 0 4px 30px rgba(139, 92, 246, 0.15);
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #a78bfa, #ec4899, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 2px;
+}
+
+.logo-subtitle {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  letter-spacing: 3px;
+  margin-top: -2px;
+}
+
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #a78bfa, #ec4899);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #fff;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.15), rgba(236, 72, 153, 0.15));
+  backdrop-filter: brightness(0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 1000px;
+  padding: 2rem;
+}
+
+.logo-hero {
+  margin-bottom: 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.logo-img {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 10px 30px rgba(167, 139, 250, 0.5));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.hero-title {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a78bfa, #ec4899, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(30deg); }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 3rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #a78bfa, #ec4899);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 40px rgba(167, 139, 250, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 50px rgba(167, 139, 250, 0.6);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .arrow {
+  transform: translateX(5px);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+}
+
+.wheel {
+  width: 4px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 2px;
+  animation: scroll 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+/* Sections */
+section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: brightness(0.4);
+}
+
+.section-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.85), rgba(139, 92, 246, 0.2));
+}
+
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.content-box {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  padding: 4rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.2), rgba(236, 72, 153, 0.2));
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 50px;
+  color: #a78bfa;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #fff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.decorative-line {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #a78bfa, #ec4899);
+  border-radius: 2px;
+  margin-bottom: 2rem;
+}
+
+.section-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2.5rem;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #a78bfa;
+  transform: translateX(5px);
+}
+
+.btn-icon {
+  transition: transform 0.3s ease;
+}
+
+.btn-secondary:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  background: rgba(167, 139, 250, 0.1);
+  border-color: rgba(167, 139, 250, 0.3);
+  transform: translateY(-10px);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  background: rgba(167, 139, 250, 0.1);
+  border-color: #a78bfa;
+  transform: translateX(10px);
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(to bottom, #000, #0a0a0a);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4rem 2rem 2rem;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-title {
+  font-size: 0.9rem;
+  color: #a78bfa;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.footer-content {
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.8;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #a78bfa;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #fff;
+  padding-left: 5px;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  background: linear-gradient(135deg, #a78bfa, #ec4899);
+  border-color: transparent;
+  transform: translateY(-5px);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: 80%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    transition: right 0.4s ease;
+    padding: 2rem;
+  }
+
+  .navbar ul.menu-open {
+    right: 0;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .content-box {
+    padding: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .btn-primary {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+</style>
