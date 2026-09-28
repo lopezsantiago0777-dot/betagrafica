@@ -1,0 +1,12 @@
+node_modules
+dist
+.git
+.gitignore
+.env
+.env.local
+.vscode
+public_BACKUP
+public_BEFORE_RECOVERY
+lighthouse-report.html
+home-mejorado
+*.md

@@ -1546,8 +1546,8 @@ import Header from '@/components/Header.vue'
 const router = useRouter()
 
 
-const API = 'http://localhost:5000/api'
-const API_URL = 'http://localhost:5000'
+const API = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api'
+const API_URL = import.meta.env.VITE_API_URL || ''
 
 const cargandoImagen = ref(false)
 const urlGeneradaTool = ref('')
@@ -2603,11 +2603,14 @@ const resolverImagen = (imagen) => {
   if (imagen.includes('localhost:5000/uploads/')) {
     imagen = imagen.replace('localhost:5000/uploads/', 'localhost:5000/static/uploads/')
   }
+  if (imagen.includes('localhost:5000')) {
+    imagen = imagen.replace(/^https?:\/\/localhost:5000/, '')
+  }
   if (imagen.startsWith('http://') || imagen.startsWith('https://') || imagen.startsWith('data:image')) {
     return imagen
   }
   const rutaLimpia = imagen.startsWith('/') ? imagen.slice(1) : imagen
-  return `${API_URL}/static/uploads/${rutaLimpia}`
+  return API_URL ? `${API_URL}/static/uploads/${rutaLimpia}` : `/static/uploads/${rutaLimpia}`
 }
 
 const manejarErrorImagen = (e) => {

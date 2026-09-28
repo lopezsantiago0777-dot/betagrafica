@@ -4,6 +4,7 @@ import re
 import secrets
 import hashlib
 import traceback
+import time
 from datetime import datetime, timedelta
 import requests
 from flask import Flask, request, jsonify, render_template_string
@@ -83,13 +84,23 @@ def agregar_columna_si_no_existe(cursor, tabla, nombre_columna, definicion_sql):
     cursor.execute(f"ALTER TABLE `{tabla}` ADD COLUMN {definicion_sql}")
 
 
-def init_db():
+def init_db(max_retries=15, retry_delay=2):
     conn = None
     cursor = None
-    try:
-        conn = get_db_connection()
-        cursor = conn.cursor()
+    for attempt in range(1, max_retries + 1):
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            break
+        except Error as e:
+            if attempt < max_retries:
+                print(f"⏳ [BD] Esperando a la base de datos... intento {attempt}/{max_retries} ({str(e)})")
+                time.sleep(retry_delay)
+            else:
+                print(f"🔴 [BD] No se pudo conectar a la base de datos tras {max_retries} intentos: {str(e)}")
+                return
 
+    try:
         # Tabla Usuarios
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS usuarios (
@@ -427,7 +438,8 @@ def registro():
         )
         conn.commit()
 
-        link = f"http://localhost:5000/api/verificar-email/{token_verificacion}"
+        app_url = os.getenv('APP_URL', 'http://localhost:5000').rstrip('/')
+        link = f"{app_url}/api/verificar-email/{token_verificacion}"
         html_body = f"""
             <h2>¡Bienvenido a Beta Gráfica, {nombre}!</h2>
             <p>Por favor confirma tu correo haciendo clic en el siguiente enlace:</p>

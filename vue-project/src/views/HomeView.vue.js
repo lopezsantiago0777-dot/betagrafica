@@ -99,7 +99,8 @@ function nextSlide() {
     restartCarousel();
 }
 function previousSlide() {
-    currentSlide.value = (currentSlide.value - 1 + slides.length) % slides.length;
+    currentSlide.value =
+        (currentSlide.value - 1 + slides.length) % slides.length;
     restartCarousel();
 }
 function goToSlide(index) {
@@ -133,7 +134,9 @@ onMounted(() => {
         threshold: 0.12,
         rootMargin: '0px 0px -20px 0px'
     });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document
+        .querySelectorAll('.fade-in')
+        .forEach(el => observer.observe(el));
 });
 onBeforeUnmount(() => {
     window.removeEventListener('scroll', handleScroll);
@@ -183,7 +186,7 @@ for (const [slide, index] of __VLS_getVForSourceType((__VLS_ctx.slides))) {
     }
     else {
         __VLS_asFunctionalElement(__VLS_elements.img)({
-            src: (__VLS_ctx.makeImageSrc(slide.image)),
+            src: (__VLS_ctx.makeImageSrc(slide.image ?? '')),
             alt: (slide.title),
             ...{ class: "carousel-media" },
         });

@@ -258,8 +258,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const currentHost = window.location.hostname
-const API = `http://${currentHost}:5000/api`
+const API = import.meta.env.VITE_API_URL ? `${import.meta.env.VITE_API_URL}/api` : '/api'
 
 const isRegistering = ref(false)
 const isLoggedIn = ref(false)
