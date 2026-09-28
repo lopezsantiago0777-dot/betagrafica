@@ -1,0 +1,73 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: betagrafica_db
+    restart: unless-stopped
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-super_secret_db_pass_123}
+      MYSQL_DATABASE: ${DB_NAME:-betagrafica}
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u root -p$${MYSQL_ROOT_PASSWORD}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    networks:
+      - betagrafica_net
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: betagrafica_backend
+    restart: unless-stopped
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=${DB_ROOT_PASSWORD:-super_secret_db_pass_123}
+      - DB_NAME=${DB_NAME:-betagrafica}
+      - SECRET_KEY=${SECRET_KEY:-beta_grafica_secret_key_prod_2026}
+      - JWT_SECRET=${JWT_SECRET:-beta_grafica_jwt_secret_prod_2026}
+      - APP_URL=${APP_URL:-http://localhost}
+      - MAIL_SERVER=${MAIL_SERVER:-smtp.gmail.com}
+      - MAIL_PORT=${MAIL_PORT:-587}
+      - MAIL_USE_TLS=${MAIL_USE_TLS:-True}
+      - MAIL_USE_SSL=${MAIL_USE_SSL:-False}
+      - MAIL_USERNAME=${MAIL_USERNAME:-betagrafica60@gmail.com}
+      - MAIL_PASSWORD=${MAIL_PASSWORD:-zjalqzpxemcrirks}
+      - MAIL_DEFAULT_SENDER=${MAIL_DEFAULT_SENDER:-betagrafica60@gmail.com}
+      - ABSTRACT_API_KEY=${ABSTRACT_API_KEY:-}
+    volumes:
+      - uploads_data:/app/static/uploads
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - betagrafica_net
+
+  frontend:
+    build:
+      context: ./vue-project
+      dockerfile: Dockerfile
+    container_name: betagrafica_frontend
+    restart: unless-stopped
+    ports:
+      - "${PORT:-80}:80"
+    depends_on:
+      - backend
+    networks:
+      - betagrafica_net
+
+volumes:
+  mysql_data:
+    driver: local
+  uploads_data:
+    driver: local
+
+networks:
+  betagrafica_net:
+    driver: bridge

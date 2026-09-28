@@ -1,0 +1,19 @@
+# Entorno local
+.env
+.env.local
+*.log
+
+# Python / Backend
+backend/.venv/
+backend/__pycache__/
+backend/*.pyc
+backend/.pytest_cache/
+
+# Node / Frontend
+vue-project/node_modules/
+vue-project/dist/
+vue-project/.vscode/
+vue-project/*.tsbuildinfo
+
+# Datos locales de Docker (si se montan localmente)
+data/
