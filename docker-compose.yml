@@ -55,8 +55,8 @@ services:
       dockerfile: Dockerfile
     container_name: betagrafica_frontend
     restart: unless-stopped
-    ports:
-      - "${PORT:-80}:80"
+    expose:
+      - "80"
     depends_on:
       - backend
     networks:
