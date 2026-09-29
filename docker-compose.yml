@@ -32,7 +32,7 @@ services:
       - DB_NAME=${DB_NAME:-betagrafica}
       - SECRET_KEY=${SECRET_KEY:-beta_grafica_secret_key_prod_2026}
       - JWT_SECRET=${JWT_SECRET:-beta_grafica_jwt_secret_prod_2026}
-      - APP_URL=${APP_URL:-http://localhost}
+      - APP_URL=${APP_URL:-https://betagrafica.store}
       - MAIL_SERVER=${MAIL_SERVER:-smtp.gmail.com}
       - MAIL_PORT=${MAIL_PORT:-587}
       - MAIL_USE_TLS=${MAIL_USE_TLS:-True}
