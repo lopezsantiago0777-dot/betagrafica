@@ -974,6 +974,13 @@ else {
     }
     var __VLS_18;
 }
+const __VLS_20 = {}.SiteFooter;
+/** @type {[typeof __VLS_components.SiteFooter, ]} */ ;
+// @ts-ignore
+SiteFooter;
+// @ts-ignore
+const __VLS_21 = __VLS_asFunctionalComponent(__VLS_20, new __VLS_20({}));
+const __VLS_22 = __VLS_21({}, ...__VLS_functionalComponentArgsRest(__VLS_21));
 /** @type {__VLS_StyleScopedClasses['auth-container']} */ ;
 /** @type {__VLS_StyleScopedClasses['auth-card']} */ ;
 /** @type {__VLS_StyleScopedClasses['auth-header']} */ ;

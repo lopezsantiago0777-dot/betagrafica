@@ -125,6 +125,8 @@ let __VLS_directives;
 /** @type {__VLS_StyleScopedClasses['mobile-toggle']} */ ;
 /** @type {__VLS_StyleScopedClasses['mobile-toggle']} */ ;
 /** @type {__VLS_StyleScopedClasses['mobile-toggle']} */ ;
+/** @type {__VLS_StyleScopedClasses['mobile-toggle']} */ ;
+/** @type {__VLS_StyleScopedClasses['mobile-toggle']} */ ;
 /** @type {__VLS_StyleScopedClasses['active']} */ ;
 /** @type {__VLS_StyleScopedClasses['mobile-toggle']} */ ;
 /** @type {__VLS_StyleScopedClasses['active']} */ ;

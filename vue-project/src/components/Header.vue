@@ -1101,8 +1101,6 @@ onBeforeUnmount(() => {
 
   flex-direction: column;
 
-  gap: 5px;
-
   cursor: pointer;
 
   background: transparent;
@@ -1123,6 +1121,10 @@ onBeforeUnmount(() => {
 
 
 .mobile-toggle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
   display: block;
 
   width: 15px;
@@ -1132,12 +1134,25 @@ onBeforeUnmount(() => {
 
   border-radius: 2px;
 
+  transform:
+    translate(-50%, calc(-50% + var(--line-offset, 0px)));
+
   box-shadow:
     0 1px 4px rgba(0, 0, 0, 0.7);
 
   transition:
     transform 0.35s var(--ease),
     opacity 0.25s ease;
+}
+
+
+.mobile-toggle span:nth-child(1) {
+  --line-offset: -5px;
+}
+
+
+.mobile-toggle span:nth-child(3) {
+  --line-offset: 5px;
 }
 
 
@@ -1168,7 +1183,7 @@ onBeforeUnmount(() => {
 
 .mobile-toggle.active span:nth-child(1) {
   transform:
-    translateY(6px)
+    translate(-50%, -50%)
     rotate(45deg);
 }
 
@@ -1180,7 +1195,7 @@ onBeforeUnmount(() => {
 
 .mobile-toggle.active span:nth-child(3) {
   transform:
-    translateY(-6px)
+    translate(-50%, -50%)
     rotate(-45deg);
 }
 

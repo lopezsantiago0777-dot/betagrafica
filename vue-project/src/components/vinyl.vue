@@ -108,47 +108,7 @@ const heroImageAlt = ref('Insumos gráficos')
       </section>
 
       <!-- FOOTER -->
-      <footer class="footer" id="contacto">
-        <div class="container footer-grid">
-          <div class="footer-brand">
-            <div class="footer-logo">
-              BETA
-              <span>GRÁFICA</span>
-            </div>
-            <p>Industria Gráfica Integral<br>Desde 1997</p>
-          </div>
-
-          <div class="footer-links">
-            <div>
-              <h3 class="footer-title">ENLACES</h3>
-              <a href="/">Inicio</a>
-              <a href="/ventas">Productos</a>
-              <a href="/beta">Nosotros</a>
-            </div>
-            <div>
-              <h3 class="footer-title">&nbsp;</h3>
-              <a href="https://wa.me/5493564652137">Contacto</a>
-            </div>
-          </div>
-
-          <div class="footer-social">
-            <h3 class="footer-title">SEGUINOS</h3>
-            <div class="social-list">
-              <a href="https://www.facebook.com/share/1BDXuPqTHn/" target="_blank" aria-label="Facebook" class="social-link">f</a>
-              <a href="https://www.instagram.com/beta_grafica/?next=%2F" target="_blank" aria-label="Instagram" class="social-link">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm6.5-8.75a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0ZM12 2c3.27 0 3.67.01 4.96.07 1.2.05 2.03.25 2.75.53a5.56 5.56 0 0 1 1.99 1.3 5.56 5.56 0 0 1 1.3 1.99c.28.72.48 1.55.53 2.75.06 1.29.07 1.69.07 4.96s-.01 3.67-.07 4.96c-.05 1.2-.25 2.03-.53 2.75a5.56 5.56 0 0 1-1.3 1.99 5.56 5.56 0 0 1-1.99 1.3c-.72.28-1.55.48-2.75.53-1.29.06-1.69.07-4.96.07s-3.67-.01-4.96-.07c-1.2-.05-2.03-.25-2.75-.53a5.56 5.56 0 0 1-1.99-1.3A5.56 5.56 0 0 1 1 19.31c-.28-.72-.48-1.55-.53-2.75C.41 15.27.4 14.87.4 11.6s.01-3.67.07-4.96C.52 5.44.72 4.61 1 3.89a5.56 5.56 0 0 1 1.3-1.99A5.56 5.56 0 0 1 4.29.6C5.01.32 5.84.12 7.04.07 8.33.01 8.73 0 12 0Z"/></svg>
-              </a>
-              <a href="https://www.tiktok.com/@beta.grafica" target="_blank" aria-label="TikTok" class="social-link">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2h3.1c.24 1.8 1.22 3.43 2.73 4.47A8.25 8.25 0 0 0 22 7.38v3.24a11.2 11.2 0 0 1-4.9-1.5v6.03A6.85 6.85 0 1 1 11.15 8.3v3.34a3.5 3.5 0 1 0 2.85 3.44V2Z"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="container footer-bottom">
-          <p class="copyright">© 2024 Beta Gráfica. Todos los derechos reservados.</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
 
     <!-- WHATSAPP: URL ORIGINAL CONSERVADA -->

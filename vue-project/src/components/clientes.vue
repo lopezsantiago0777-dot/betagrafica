@@ -250,6 +250,7 @@
       </transition>
     </div>
   </div>
+  <SiteFooter />
 </template>
 
 <script setup>

@@ -302,6 +302,13 @@ __VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({
     ...{ class: "scroll-indicator" },
 });
 __VLS_asFunctionalElement(__VLS_elements.span, __VLS_elements.span)({});
+const __VLS_10 = {}.SiteFooter;
+/** @type {[typeof __VLS_components.SiteFooter, ]} */ ;
+// @ts-ignore
+SiteFooter;
+// @ts-ignore
+const __VLS_11 = __VLS_asFunctionalComponent(__VLS_10, new __VLS_10({}));
+const __VLS_12 = __VLS_11({}, ...__VLS_functionalComponentArgsRest(__VLS_11));
 /** @type {__VLS_StyleScopedClasses['main-carousel']} */ ;
 /** @type {__VLS_StyleScopedClasses['carousel-background']} */ ;
 /** @type {__VLS_StyleScopedClasses['carousel-slide']} */ ;

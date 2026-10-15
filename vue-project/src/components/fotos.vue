@@ -195,109 +195,7 @@
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-row">
-      <div class="footer-col brand-info">
-        <h3 class="footer-title">Beta Gráfica</h3>
-
-        <p class="footer-highlight">
-          Industria Gráfica Integral
-        </p>
-
-        <p class="footer-text">
-          Calidad premium y precisión milimétrica en cada impresión desde 1997.
-        </p>
-      </div>
-
-      <div class="footer-col social-hub">
-        <h3 class="footer-title">
-          REDES SOCIALES
-        </h3>
-
-        <div class="social-icons">
-          <a
-            href="https://www.facebook.com/share/1BDXuPqTHn/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="svg-icon"
-            >
-              <path
-                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z"
-              />
-            </svg>
-          </a>
-
-          <a
-            href="https://www.instagram.com/beta_grafica/?next=%2F"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="svg-icon"
-            >
-              <path
-                d="M12 2.163c3.204 0 3.584.012
-                4.85.07 3.252.148 4.771 1.691
-                4.919 4.919.058 1.265.069 1.645
-                .069 4.849 0 3.205-.012 3.584
-                -.069 4.849-.149 3.225-1.664
-                4.771-4.919 4.919-1.266.058-1.644
-                .07-4.85.07-3.204 0-3.584-.014
-                -4.849-.07-3.26-.149-4.771-1.699
-                -4.919-4.92-.058-1.28-.07-1.644
-                -.07-4.849 0-3.204.013-3.583
-                .07-4.849.149-3.227 1.664-4.771
-                4.919-4.919C8.333.014 8.741 0 12 0zm0
-                5.838a6.162 6.162 0 100 12.324
-                6.162 6.162 0 000-12.324zM12
-                16a4 4 0 110-8 4 4 0 010 8zm6.406
-                -11.845a1.44 1.44 0 100 2.881
-                1.44 1.44 0 000-2.881z"
-              />
-            </svg>
-          </a>
-
-          <a
-            href="https://www.tiktok.com/@beta.grafica?_t=ZM-909zpyOoHTI&_r=1"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="TikTok"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              class="svg-icon"
-            >
-              <path
-                d="M12.525.02c1.31-.02 2.61-.01
-                3.91-.02.08 1.53.63 3.02 1.59
-                4.23.94 1.15 2.25 1.93 3.69
-                2.23v3.74c-1.5-.04-2.99-.48
-                -4.26-1.3-.77-.5-1.44-1.13
-                -1.97-1.87v6.97c-.03 2.1-.81
-                4.14-2.18 5.62-1.54 1.74-3.8
-                2.76-6.13 2.8-2.13.06-4.24-.65
-                -5.85-2.01C-.04 18.91-.45 16.2
-                .29 13.91c.64-2.1 2.38-3.77
-                4.54-4.33.6-.17 1.23-.24
-                1.85-.24V13c-.92-.01-1.85.28
-                -2.55.88-.73.61-1.14 1.54-1.1
-                2.48.05 1.05.62 2.03 1.51
-                2.58.91.58 2.06.66 3.03.22
-                .95-.41 1.65-1.28 1.88-2.29
-                .07-.36.1-.73.09-1.1V0l.01.02z"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <SiteFooter />
 
   <!-- WHATSAPP -->
   <a
@@ -1559,7 +1457,7 @@ onBeforeUnmount(() => {
   width: 56px;
   height: 56px;
 
-  background-color: #25d366;
+  background-color: #000000;
 
   border-radius: 50%;
 
@@ -1569,7 +1467,7 @@ onBeforeUnmount(() => {
   justify-content: center;
 
   box-shadow:
-    0 10px 25px rgba(37, 211, 102, 0.3);
+    0 10px 25px rgba(255, 255, 255, 0.3);
 
   z-index: 999;
 
@@ -1598,7 +1496,7 @@ onBeforeUnmount(() => {
 
   border-radius: 50%;
 
-  border: 2px solid #25d366;
+  border: 2px solid #f2f5f342;
 
   animation: geoPulse 2s infinite ease-out;
 

@@ -5,7 +5,6 @@ let __VLS_components;
 let __VLS_directives;
 /** @type {__VLS_StyleScopedClasses['social-icons']} */ ;
 /** @type {__VLS_StyleScopedClasses['social-icons']} */ ;
-/** @type {__VLS_StyleScopedClasses['footer']} */ ;
 /** @type {__VLS_StyleScopedClasses['heading']} */ ;
 /** @type {__VLS_StyleScopedClasses['image-right']} */ ;
 /** @type {__VLS_StyleScopedClasses['image-right']} */ ;
@@ -58,63 +57,13 @@ __VLS_asFunctionalElement(__VLS_elements.img)({
     src: "/imagenes/ploteado.vehicular.jpg",
     alt: "Producto Destacado",
 });
-__VLS_asFunctionalElement(__VLS_elements.footer, __VLS_elements.footer)({
-    ...{ class: "footer" },
-});
-__VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({
-    ...{ class: "footer-row" },
-});
-__VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({
-    ...{ class: "footer-col" },
-});
-__VLS_asFunctionalElement(__VLS_elements.h3, __VLS_elements.h3)({});
-__VLS_asFunctionalElement(__VLS_elements.p, __VLS_elements.p)({
-    ...{ class: "footer-highlight" },
-});
-__VLS_asFunctionalElement(__VLS_elements.p, __VLS_elements.p)({});
-__VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({
-    ...{ class: "footer-col" },
-});
-__VLS_asFunctionalElement(__VLS_elements.h3, __VLS_elements.h3)({});
-__VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({
-    ...{ class: "social-icons" },
-});
-__VLS_asFunctionalElement(__VLS_elements.a, __VLS_elements.a)({
-    href: "https://www.facebook.com/share/1BDXuPqTHn/",
-    target: "_blank",
-    'aria-label': "Facebook",
-});
-__VLS_asFunctionalElement(__VLS_elements.svg, __VLS_elements.svg)({
-    viewBox: "0 0 24 24",
-    ...{ class: "svg-icon" },
-});
-__VLS_asFunctionalElement(__VLS_elements.path)({
-    d: "M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c4.56-.93 8-4.96 8-9.8z",
-});
-__VLS_asFunctionalElement(__VLS_elements.a, __VLS_elements.a)({
-    href: "https://www.instagram.com/beta_grafica/?next=%2F",
-    target: "_blank",
-    'aria-label': "Instagram",
-});
-__VLS_asFunctionalElement(__VLS_elements.svg, __VLS_elements.svg)({
-    viewBox: "0 0 24 24",
-    ...{ class: "svg-icon" },
-});
-__VLS_asFunctionalElement(__VLS_elements.path)({
-    d: "M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z",
-});
-__VLS_asFunctionalElement(__VLS_elements.a, __VLS_elements.a)({
-    href: "https://www.tiktok.com/@beta.grafica?_t=ZM-909zpyOoHTI&_r=1",
-    target: "_blank",
-    'aria-label': "TikTok",
-});
-__VLS_asFunctionalElement(__VLS_elements.svg, __VLS_elements.svg)({
-    viewBox: "0 0 24 24",
-    ...{ class: "svg-icon" },
-});
-__VLS_asFunctionalElement(__VLS_elements.path)({
-    d: "M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.02 1.59 4.23.94 1.15 2.25 1.93 3.69 2.23v3.74c-1.5-.04-2.99-.48-4.26-1.3-.77-.5-1.44-1.13-1.97-1.87v6.97c-.03 2.1-.81 4.14-2.18 5.62-1.54 1.74-3.8 2.76-6.13 2.8-2.13.06-4.24-.65-5.85-2.01C-.04 18.91-.45 16.2.29 13.91c.64-2.1 2.38-3.77 4.54-4.33.6-.17 1.23-.24 1.85-.24V13c-.92-.01-1.85.28-2.55.88-.73.61-1.14 1.54-1.1 2.48.05 1.05.62 2.03 1.51 2.58.91.58 2.06.66 3.03.22.95-.41 1.65-1.28 1.88-2.29.07-.36.1-.73.09-1.1V0l.01.02z",
-});
+const __VLS_0 = {}.SiteFooter;
+/** @type {[typeof __VLS_components.SiteFooter, ]} */ ;
+// @ts-ignore
+SiteFooter;
+// @ts-ignore
+const __VLS_1 = __VLS_asFunctionalComponent(__VLS_0, new __VLS_0({}));
+const __VLS_2 = __VLS_1({}, ...__VLS_functionalComponentArgsRest(__VLS_1));
 __VLS_asFunctionalElement(__VLS_elements.a, __VLS_elements.a)({
     href: "https://wa.me/5493564652137",
     target: "_blank",
@@ -141,15 +90,6 @@ __VLS_asFunctionalElement(__VLS_elements.path)({
 /** @type {__VLS_StyleScopedClasses['content']} */ ;
 /** @type {__VLS_StyleScopedClasses['image']} */ ;
 /** @type {__VLS_StyleScopedClasses['image-right']} */ ;
-/** @type {__VLS_StyleScopedClasses['footer']} */ ;
-/** @type {__VLS_StyleScopedClasses['footer-row']} */ ;
-/** @type {__VLS_StyleScopedClasses['footer-col']} */ ;
-/** @type {__VLS_StyleScopedClasses['footer-highlight']} */ ;
-/** @type {__VLS_StyleScopedClasses['footer-col']} */ ;
-/** @type {__VLS_StyleScopedClasses['social-icons']} */ ;
-/** @type {__VLS_StyleScopedClasses['svg-icon']} */ ;
-/** @type {__VLS_StyleScopedClasses['svg-icon']} */ ;
-/** @type {__VLS_StyleScopedClasses['svg-icon']} */ ;
 /** @type {__VLS_StyleScopedClasses['whatsapp-floating-btn']} */ ;
 /** @type {__VLS_StyleScopedClasses['pulse-ring']} */ ;
 /** @type {__VLS_StyleScopedClasses['whatsapp-icon']} */ ;
