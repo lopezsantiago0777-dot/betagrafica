@@ -2590,17 +2590,27 @@ const resolverImagen = (imagen) => {
   if (!imagen || imagen === 'null' || imagen === 'undefined' || typeof imagen !== 'string' || !imagen.trim()) {
     return 'https://placehold.co/100x100/1a1a1a/cccccc?text=Sin+Foto'
   }
-  if (imagen.includes('localhost:5000/uploads/')) {
-    imagen = imagen.replace('localhost:5000/uploads/', 'localhost:5000/static/uploads/')
+  const valor = imagen.trim()
+  const apiBase = API_URL.replace(/\/+$/, '')
+
+  if (valor.startsWith('data:image')) return valor
+
+  if (/^https?:\/\/(localhost|127\.0\.0\.1):5000\//i.test(valor)) {
+    const url = new URL(valor)
+    const ruta = url.pathname.replace(/^\/uploads\//, '/static/uploads/')
+    return `${apiBase}${ruta}${url.search}${url.hash}`
   }
-  if (imagen.includes('localhost:5000')) {
-    imagen = imagen.replace(/^https?:\/\/localhost:5000/, '')
+
+  if (valor.startsWith('http://') || valor.startsWith('https://')) return valor
+
+  let ruta = valor.startsWith('/') ? valor : `/${valor}`
+  if (ruta.startsWith('/uploads/')) {
+    ruta = ruta.replace(/^\/uploads\//, '/static/uploads/')
+  } else if (!ruta.startsWith('/static/uploads/')) {
+    ruta = `/static/uploads${ruta}`
   }
-  if (imagen.startsWith('http://') || imagen.startsWith('https://') || imagen.startsWith('data:image')) {
-    return imagen
-  }
-  const rutaLimpia = imagen.startsWith('/') ? imagen.slice(1) : imagen
-  return API_URL ? `${API_URL}/static/uploads/${rutaLimpia}` : `/static/uploads/${rutaLimpia}`
+
+  return `${apiBase}${ruta}`
 }
 
 const manejarErrorImagen = (e) => {
