@@ -3,7 +3,8 @@ import pipi from '/imagenes/pipi.jpeg';
 import pao from '/imagenes/paoactu.jpeg';
 import german from '/imagenes/germanactu.jpeg';
 import caro from '/imagenes/caroactu.jpeg';
-import nahuel from '/imagenes/nahuel.jpg';
+import nahuel from '/imagenes/Nahuel.png';
+import damian from '/imagenes/Damian.png';
 import guille from '/imagenes/guilleactu.jpeg';
 function esCumpleañosHoy(fechaNacimiento) {
     const hoy = new Date();
@@ -30,7 +31,7 @@ const datosEquipo = [
         nombre: 'Fernando Magnano',
         nacimiento: '1978-07-26',
         localidad: 'San Francisco, Cba',
-        rol: 'CEO & Fundador. Liderazgo estratégico y desarrollo de marcas corporativas.',
+        rol: 'CEO & Fundador. Liderazgo estratégico y vision innovadora.',
         imagen: pipi,
         imagenName: 'pipi'
     },
@@ -38,7 +39,7 @@ const datosEquipo = [
         nombre: 'Paola Brekes',
         nacimiento: '1978-04-28',
         localidad: 'San Francisco, Cba',
-        rol: 'Diseñadora gráfica, encargada de corte, producción y control de calidad final.',
+        rol: 'Diseñadora gráfica. Encargada general de corte, producción y control de calidad final.',
         imagen: pao,
         imagenName: 'paoactu'
     },
@@ -46,34 +47,42 @@ const datosEquipo = [
         nombre: 'German Bitschin',
         nacimiento: '1976-07-20',
         localidad: 'San Francisco, Cba',
-        rol: 'Representante en Córdoba; Especialista en ploteo vehicular de alta complejidad, cartelería y rotulaciones.',
+        rol: 'Representante en Córdoba. Especialista en ploteo vehicular de alta complejidad, cartelería y rotulaciones.',
         imagen: german,
         imagenName: 'germanactu'
-    },
-    {
-        nombre: 'Carolina Pacheco',
-        nacimiento: '1992-06-16',
-        localidad: 'San Francisco, Cba',
-        rol: 'Atención exclusiva al público, relevamiento técnico de datos y coordinación de producción.',
-        imagen: caro,
-        imagenName: 'caroactu'
-    },
-    {
-        nombre: 'Nahuel Schneider',
-        nacimiento: '1997-11-27',
-        localidad: 'Córdoba',
-        rol: 'Asistente técnico permanente en Córdoba, encargado de montajes y rotulaciones arquitectónicas.',
-        imagen: nahuel,
-        imagenName: 'nahuel'
     },
     {
         nombre: 'Guillermo Galvano',
         nacimiento: '1981-09-08',
         localidad: 'San Francisco, Cba',
-        rol: 'Especialista senior en ploteo vehicular, estructuras de cartelería e instalaciones industriales.',
+        rol: 'Encargado en administración y ventas.',
         imagen: guille,
         imagenName: 'guilleactu'
-    }
+    },
+    {
+        nombre: 'Carolina Pacheco',
+        nacimiento: '1992-06-16',
+        localidad: 'San Francisco, Cba',
+        rol: 'Atención exclusiva al público, relevamiento técnico de datos y asistente de producción.',
+        imagen: caro,
+        imagenName: 'caroactu'
+    },
+    {
+        nombre: 'Nahuel Schneider',
+        nacimiento: '2001-11-27',
+        localidad: 'Córdoba',
+        rol: 'Asistente técnico en ploteo vehicular.',
+        imagen: nahuel,
+        imagenName: 'nahuel'
+    },
+    {
+        nombre: 'Damian Cornejo',
+        nacimiento: '1996-01-01',
+        localidad: 'Cordoba',
+        rol: 'Asistente técnico en ploteo vehicular.',
+        imagen: damian,
+        imagenName: 'Damian'
+    },
 ];
 const equipo = computed(() => {
     return datosEquipo.map((miembro) => {

@@ -7,7 +7,7 @@
             BETA
             <span>GRÁFICA</span>
           </RouterLink>
-          <p>Industria Gráfica Integral<br>Desde 1997</p>
+          <p>Industria Gráfica Integral<br>Desde 2001</p>
         </div>
 
         <div class="site-footer-links">

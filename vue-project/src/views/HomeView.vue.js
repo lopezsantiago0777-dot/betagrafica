@@ -20,7 +20,7 @@ const slides = [
         image: 'fondonosotros.jpeg',
         eyebrow: 'SOBRE NOSOTROS',
         title: 'Calidad que se ve.',
-        description: 'Calidad premium y precisión milimétrica en cada impresión desde 1997.',
+        description: 'Calidad premium y precisión milimétrica en cada impresión desde 2001.',
         buttonText: 'Conozca la Empresa',
         buttonLink: '/beta'
     },

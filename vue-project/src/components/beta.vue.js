@@ -401,15 +401,6 @@ __VLS_asFunctionalElement(__VLS_elements.span, __VLS_elements.span)({
 __VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({});
 __VLS_asFunctionalElement(__VLS_elements.h3, __VLS_elements.h3)({});
 __VLS_asFunctionalElement(__VLS_elements.p, __VLS_elements.p)({});
-__VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({
-    ...{ class: "history-block" },
-});
-__VLS_asFunctionalElement(__VLS_elements.span, __VLS_elements.span)({
-    ...{ class: "history-index" },
-});
-__VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({});
-__VLS_asFunctionalElement(__VLS_elements.h3, __VLS_elements.h3)({});
-__VLS_asFunctionalElement(__VLS_elements.p, __VLS_elements.p)({});
 __VLS_asFunctionalElement(__VLS_elements.strong, __VLS_elements.strong)({});
 __VLS_asFunctionalElement(__VLS_elements.div, __VLS_elements.div)({
     ...{ class: "history-block" },
@@ -567,8 +558,6 @@ __VLS_asFunctionalElement(__VLS_elements.path)({
 /** @type {__VLS_StyleScopedClasses['history-image']} */ ;
 /** @type {__VLS_StyleScopedClasses['history-image-border']} */ ;
 /** @type {__VLS_StyleScopedClasses['history-copy']} */ ;
-/** @type {__VLS_StyleScopedClasses['history-block']} */ ;
-/** @type {__VLS_StyleScopedClasses['history-index']} */ ;
 /** @type {__VLS_StyleScopedClasses['history-block']} */ ;
 /** @type {__VLS_StyleScopedClasses['history-index']} */ ;
 /** @type {__VLS_StyleScopedClasses['history-block']} */ ;

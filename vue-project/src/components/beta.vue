@@ -73,9 +73,9 @@
 
             <p>
               Beta es una empresa que se inicia en el año
-              <strong>1997</strong>, en la ciudad de San Francisco,
+              <strong>2001</strong>, en la ciudad de San Francisco,
               Córdoba (Argentina), en una pequeña oficina con solo
-              un plotter de corte Roland DGA y dos computadoras.
+              un plotter de corte Roland y dos computadoras.
             </p>
 
           </div>
@@ -332,9 +332,8 @@
 
                 <p>
                   En el año <strong>2009</strong>, Fernando Pablo
-                  Magnano, fundador y propietario, montó su planta
-                  industrial que hoy cuenta con más de
-                  <strong>600 m²</strong>.
+                  Magnano, fundador y propietario, montó su estructura de 
+                  <strong>350 m²</strong>.
                 </p>
 
               </div>
@@ -351,42 +350,19 @@
               <div>
 
                 <h3>
-                  PRECISIÓN
+                  EXPANSIÓN
                 </h3>
 
                 <p>
-                  Nuestra planta incluye un área especializada
-                  de ploteo y rotulación vehicular totalmente
-                  equipada para afrontar proyectos de gran
-                  complejidad.
+                  El crecimiento sostenido de la empresa, nos obligo
+                  a expandirnos, por lo tanto, en el año <strong>2023</strong>
+                  inauguramos nuestra nueva planta en el parque industrial de San Francisco.
                 </p>
 
               </div>
 
             </div>
 
-
-            <div class="history-block">
-
-              <span class="history-index">
-                03
-              </span>
-
-              <div>
-
-                <h3>
-                  ROLAND DGA
-                </h3>
-
-                <p>
-                  Elegimos a <strong>Roland DGA</strong> por su
-                  calidad indiscutible y la confiabilidad de
-                  la marca.
-                </p>
-
-              </div>
-
-            </div>
 
 
             <div class="history-block">
@@ -403,9 +379,9 @@
 
                 <p>
                   Nuestro ritmo operativo procesa un promedio
-                  de <strong>1.400 rotulaciones al año</strong>,
-                  alcanzando hasta 4 vehículos complejos por
-                  jornada con precisión milimétrica.
+                  de <strong> 3.200 rotulaciones al año</strong>,
+                  alcanzando hasta 100 vehículos complejos por
+                  semana.
                 </p>
 
               </div>
