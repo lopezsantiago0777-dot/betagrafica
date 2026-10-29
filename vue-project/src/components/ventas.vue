@@ -8824,4 +8824,618 @@ h3 {
   }
 }
 
+@media (max-width: 650px) {
+  .ventas-container:has(.admin-panel) {
+    width: 100%;
+    padding: 76px 12px 28px !important;
+    overflow-x: clip;
+  }
+
+  .admin-panel,
+  .admin-panel > *,
+  .admin-section,
+  .admin-grid-two-cols,
+  .admin-sales-view,
+  .admin-calendar-view,
+  .admin-stats-section {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .admin-panel {
+    gap: 14px !important;
+  }
+
+  .panel-header {
+    margin-bottom: 0;
+    padding: 17px 15px !important;
+  }
+
+  .panel-header h2 {
+    font-size: clamp(1.25rem, 6vw, 1.65rem) !important;
+    line-height: 1.15;
+  }
+
+  .panel-header .subtitle {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .admin-views-switcher {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    gap: 5px;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .admin-view-tab {
+    min-width: 0;
+    padding: 10px 4px !important;
+    font-size: 0.68rem !important;
+    line-height: 1.25;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .admin-section {
+    padding: 14px !important;
+    border-radius: 13px !important;
+  }
+
+  .admin-section h3,
+  .admin-panel h3 {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  .admin-panel .section-desc {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .alert-vencimiento-container {
+    padding: 14px;
+    max-width: 100%;
+  }
+
+  .alert-vencimiento-header {
+    align-items: flex-start;
+  }
+
+  .alert-vencimiento-header h3 {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .alert-vencimiento-card {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .info-row {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .info-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .card-badge-zone {
+    align-items: stretch;
+  }
+
+  .badge-vence-danger {
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.74rem;
+  }
+
+  .billing-workspace {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 14px !important;
+    padding: 12px !important;
+  }
+
+  .filtro-clientes-sidebar {
+    min-width: 0;
+    max-height: 230px !important;
+  }
+
+  .sidebar-customers-list {
+    min-width: 0;
+  }
+
+  .customer-mini-details {
+    min-width: 0;
+  }
+
+  .customer-mini-details .name,
+  .customer-mini-details .email {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .facturas-carousel-zone,
+  .facturas-carousel,
+  .mini-factura-card {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .factura-header,
+  .factura-footer {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .factura-footer > div:last-child {
+    width: 100% !important;
+    flex-wrap: wrap;
+  }
+
+  .factura-footer > div:last-child > button {
+    flex: 1 1 130px;
+    width: auto !important;
+  }
+
+  .section-header-flex {
+    align-items: stretch !important;
+  }
+
+  .stats-kpis-grid,
+  .stats-panels-grid,
+  .stats-panels-grid.two-columns,
+  .admin-grid-two-cols {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .stats-kpi-card,
+  .stats-panel-card,
+  .stats-stock-card {
+    min-width: 0;
+    padding: 13px;
+  }
+
+  .stock-header-row {
+    align-items: stretch !important;
+  }
+
+  .stock-type-switcher {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .stock-type-btn {
+    min-width: 0 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .stats-stock-table-wrap {
+    overflow: visible;
+  }
+
+  .stats-stock-table,
+  .stats-stock-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .stats-stock-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 12px;
+    margin-top: 10px;
+    padding: 12px;
+    border: 1px solid rgba(148, 163, 184, 0.16);
+    border-radius: 11px;
+    background: rgba(2, 6, 23, 0.28);
+  }
+
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) td {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 !important;
+    border: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    font-size: 0.75rem !important;
+  }
+
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) td::before {
+    color: #94a3b8;
+    font-size: 0.58rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) td:nth-child(1)::before { content: "Producto"; }
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) td:nth-child(2)::before { content: "Código"; }
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) td:nth-child(3)::before { content: "Color"; }
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) td:nth-child(4)::before { content: "Stock"; }
+
+  .stats-stock-table tbody tr:not(:has(.stats-empty)) .stock-product-name {
+    grid-column: 1 / -1;
+    font-size: 0.86rem !important;
+  }
+
+  .stats-stock-table .stats-empty {
+    display: block;
+    padding: 14px !important;
+    white-space: normal;
+  }
+
+  .stock-pagination {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .admin-panel .asignacion-masiva-imagenes [style*="grid-template-columns"],
+  .admin-panel .nuevo-producto-form [style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .admin-panel .asignacion-masiva-imagenes [style*="display:flex"],
+  .admin-panel .asignacion-masiva-imagenes [style*="display: flex"] {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .admin-panel .asignacion-masiva-imagenes input,
+  .admin-panel .nuevo-producto-form input,
+  .admin-panel .nuevo-producto-form select,
+  .admin-panel .nuevo-producto-form textarea {
+    min-width: 0 !important;
+    max-width: 100%;
+  }
+
+  .catalog-filter-header {
+    align-items: stretch !important;
+    flex-direction: column;
+  }
+
+  .catalog-filter-header > div:last-child {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-products-container {
+    overflow-x: auto !important;
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .admin-products-container > div {
+    min-width: 0 !important;
+  }
+
+  .admin-product-header {
+    display: none !important;
+  }
+
+  .admin-product-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "photo name"
+      "code code"
+      "color measure"
+      "stock stock"
+      "url url"
+      "actions actions";
+    align-items: center !important;
+    gap: 9px !important;
+    padding: 11px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .admin-product-row > :nth-child(1) { grid-area: photo; }
+  .admin-product-row > :nth-child(2) { grid-area: name; }
+  .admin-product-row > :nth-child(3) { grid-area: code; }
+  .admin-product-row > :nth-child(4) { grid-area: color; }
+  .admin-product-row > :nth-child(5) { grid-area: measure; }
+  .admin-product-row > :nth-child(6) { grid-area: stock; }
+  .admin-product-row > :nth-child(7) { grid-area: url; }
+  .admin-product-row > :nth-child(8) { grid-area: actions; }
+
+  .admin-product-row > :nth-child(n + 2):not(:nth-child(3)):not(:nth-child(8)) {
+    width: 100% !important;
+    min-width: 0 !important;
+    text-align: left !important;
+  }
+
+  .admin-product-row > :nth-child(3) {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .admin-product-row > :nth-child(3) label {
+    justify-content: flex-start !important;
+  }
+
+  .admin-product-row > :nth-child(8) {
+    display: flex !important;
+    min-width: 0 !important;
+    justify-content: flex-end !important;
+  }
+
+  .admin-product-row .pro-input {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .admin-panel .admin-grid-two-cols {
+    gap: 14px;
+  }
+
+  .admin-panel .admin-grid-two-cols > .admin-section {
+    padding: 14px !important;
+  }
+
+  .table-container {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: 55vh;
+    overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pro-table {
+    min-width: 560px;
+  }
+
+  .pagination-controls {
+    justify-content: center !important;
+    flex-wrap: wrap;
+    gap: 7px !important;
+  }
+
+  .pagination-controls .btn-nav {
+    padding: 8px 9px;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .calendar-header-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100% !important;
+    gap: 7px;
+  }
+
+  .calendar-view-switch {
+    grid-column: 1 / -1;
+    display: flex;
+    width: 100%;
+  }
+
+  .calendar-view-switch button {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .calendar-header-actions > .calendar-nav-btn,
+  .calendar-header-actions > .calendar-today-btn {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 6px;
+    font-size: 0.68rem;
+    white-space: normal;
+  }
+
+  .calendar-upcoming-list {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .calendar-upcoming-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+  }
+
+  .calendar-upcoming-item > div {
+    grid-column: 1 / -1;
+  }
+
+  .calendar-upcoming-item strong,
+  .calendar-upcoming-item small {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .calendar-toolbar > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .calendar-add-btn {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .calendar-week {
+    grid-template-columns: minmax(0, 1fr);
+    overflow: visible;
+    padding: 0;
+  }
+
+  .calendar-day {
+    min-height: 0;
+  }
+
+  .calendar-day-tasks {
+    padding: 9px;
+  }
+
+  .calendar-empty-day {
+    min-height: 48px;
+  }
+
+  .calendar-day-add {
+    min-height: 38px;
+  }
+
+  .calendar-month-weekdays span {
+    padding: 8px 1px;
+    font-size: 0.54rem;
+    letter-spacing: 0;
+  }
+
+  .calendar-month-day {
+    min-height: 68px;
+    padding: 4px 2px;
+  }
+
+  .calendar-month-number {
+    width: 23px;
+    height: 23px;
+    font-size: 0.65rem;
+  }
+
+  .calendar-month-task-summary {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+    margin-top: 4px;
+  }
+
+  .calendar-month-task-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: currentColor;
+    font-size: 0;
+  }
+
+  .calendar-month-task-summary small {
+    width: 100%;
+    font-size: 0.5rem;
+  }
+
+  .calendar-month-empty {
+    display: none;
+  }
+
+  .calendar-selected-day-panel,
+  .calendar-completed-section {
+    padding: 12px;
+  }
+
+  .calendar-selected-day-header,
+  .calendar-completed-item {
+    align-items: flex-start;
+  }
+
+  .calendar-completed-item {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .calendar-completed-item strong {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-task-modal-overlay {
+    align-items: flex-end;
+    padding: 8px;
+  }
+
+  .calendar-task-modal {
+    width: 100%;
+    max-height: calc(100dvh - 16px);
+    border-radius: 16px;
+  }
+
+  .calendar-task-modal-header,
+  .calendar-task-form {
+    padding: 14px;
+  }
+
+  .calendar-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .calendar-modal-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .calendar-modal-actions-right {
+    width: 100%;
+  }
+
+  .calendar-modal-actions-right > button,
+  .calendar-delete-btn {
+    flex: 1;
+    min-height: 42px;
+  }
+}
+
+@media (max-width: 380px) {
+  .ventas-container:has(.admin-panel) {
+    padding-right: 9px !important;
+    padding-left: 9px !important;
+  }
+
+  .admin-section {
+    padding: 11px !important;
+  }
+
+  .admin-view-tab {
+    font-size: 0.62rem !important;
+  }
+
+  .calendar-month-day {
+    min-height: 60px;
+  }
+
+  .calendar-month-task-dot {
+    width: 6px;
+    height: 6px;
+  }
+}
+
 </style>

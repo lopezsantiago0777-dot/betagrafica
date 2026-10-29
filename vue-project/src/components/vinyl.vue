@@ -1,17 +1,19 @@
-<script setup>
-import { ref } from 'vue'
-
-const heroImage = ref('/imagenes/vinilos.jpeg')
-const heroImageAlt = ref('Insumos gráficos')
-</script>
-
 <template>
   <div class="beta-home" id="inicio">
     <!-- HERO -->
     <main>
       <section class="hero">
         <div class="hero-image">
-          <img :src="heroImage" :alt="heroImageAlt" />
+          <video
+            src="/imagenes/stockk.mp4"
+            poster="/imagenes/vinilos.jpeg"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            aria-hidden="true"
+          ></video>
         </div>
 
         <div class="hero-content container">
@@ -48,7 +50,7 @@ const heroImageAlt = ref('Insumos gráficos')
                   <rect x="4" y="5" width="16" height="16" rx="1.5"></rect>
                   <path d="M8 3v4M16 3v4M4 10h16M8 14h3M8 17h5"></path>
                 </svg>
-                <span class="stat-value">27+</span>
+                <span class="stat-value">26+</span>
                 <span class="stat-label">AÑOS DE<br>EXPERIENCIA</span>
               </div>
 
@@ -258,12 +260,11 @@ const heroImageAlt = ref('Insumos gráficos')
   overflow: hidden;
 }
 
-.hero-image img {
+.hero-image video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 58% center;
-  filter: saturate(.72) contrast(.97);
   transform: scale(1.015);
 }
 
@@ -873,7 +874,7 @@ const heroImageAlt = ref('Insumos gráficos')
     height: clamp(360px, 57vw, 500px);
   }
 
-  .hero-image img {
+  .hero-image video {
     object-position: 57% center;
     transform: none;
   }

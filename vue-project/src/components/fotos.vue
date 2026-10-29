@@ -97,12 +97,14 @@
             <div class="image-wrapper">
               <picture>
                 <source
+                  v-if="!imagenesSinVariantes.includes(img)"
                   :srcset="makeSrcset(img, 'avif')"
                   type="image/avif"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
 
                 <source
+                  v-if="!imagenesSinVariantes.includes(img)"
                   :srcset="makeSrcset(img, 'webp')"
                   type="image/webp"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -261,6 +263,12 @@ type Categoria = 'vehiculos' | 'equipacion'
 
 const categoria = ref<Categoria>('vehiculos')
 
+const imagenesSinVariantes = [
+  '/imagenes/brillaenlaoscuridad.jpeg',
+  '/imagenes/Rosaamarilloyblancoconunbebesostenidoconmanos.jpeg',
+  '/imagenes/autito.jpeg'
+]
+
 const galeriaFotos = {
   vehiculos: [
     '/imagenes/galeria 1.jpeg',
@@ -280,7 +288,10 @@ const galeriaFotos = {
     '/imagenes/galeria 16 (1).jpeg',
     '/imagenes/galeria 17.jpeg',
     '/imagenes/galeria 18.jpeg',
-    '/imagenes/pisos (2).jpeg'
+    '/imagenes/brillaenlaoscuridad.jpeg',
+    '/imagenes/pisos (2).jpeg',
+    '/imagenes/Rosaamarilloyblancoconunbebesostenidoconmanos.jpeg',
+    '/imagenes/autito.jpeg'
   ],
 
   equipacion: [
@@ -792,17 +803,21 @@ onBeforeUnmount(() => {
 ========================================================= */
 
 .grid {
-  display: grid;
-
-  grid-template-columns: repeat(12, 1fr);
-
-  gap: 18px;
-
-  align-items: start;
+  column-count: 3;
+  column-gap: 18px;
+  column-fill: balance;
 }
 
 .item {
+  display: inline-block;
+
   position: relative;
+
+  width: 100%;
+
+  margin-bottom: 18px;
+
+  break-inside: avoid;
 
   cursor: pointer;
 
@@ -823,42 +838,21 @@ onBeforeUnmount(() => {
     box-shadow 0.55s var(--ease);
 }
 
-/* Distribución irregular para que no parezca una grilla genérica */
-
-.item-1 {
-  grid-column: span 5;
-}
-
-.item-2 {
-  grid-column: span 7;
-}
-
-.item-3 {
-  grid-column: span 4;
-}
-
-.item-4 {
-  grid-column: span 4;
-}
-
-.item-5 {
-  grid-column: span 4;
-}
-
-.item-6 {
-  grid-column: span 7;
-}
+/* Proporciones variadas para crear un mosaico sin huecos entre tarjetas */
 
 .item-1 .image-wrapper,
-.item-2 .image-wrapper,
-.item-6 .image-wrapper {
+.item-4 .image-wrapper {
   aspect-ratio: 16 / 10;
 }
 
 .item-3 .image-wrapper,
-.item-4 .image-wrapper,
+.item-6 .image-wrapper {
+  aspect-ratio: 4 / 5;
+}
+
+.item-2 .image-wrapper,
 .item-5 .image-wrapper {
-  aspect-ratio: 4 / 4.6;
+  aspect-ratio: 4 / 3;
 }
 
 .item:hover {
@@ -1542,25 +1536,7 @@ onBeforeUnmount(() => {
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .item-1,
-  .item-2,
-  .item-3,
-  .item-4,
-  .item-5,
-  .item-6 {
-    grid-column: span 1;
-  }
-
-  .item-1 .image-wrapper,
-  .item-2 .image-wrapper,
-  .item-3 .image-wrapper,
-  .item-4 .image-wrapper,
-  .item-5 .image-wrapper,
-  .item-6 .image-wrapper {
-    aspect-ratio: 4 / 3;
+    column-count: 2;
   }
 
   .footer-row {
@@ -1645,27 +1621,12 @@ onBeforeUnmount(() => {
   }
 
   .grid {
-    grid-template-columns: 1fr;
-
-    gap: 14px;
+    column-count: 1;
+    column-gap: 0;
   }
 
-  .item-1,
-  .item-2,
-  .item-3,
-  .item-4,
-  .item-5,
-  .item-6 {
-    grid-column: span 1;
-  }
-
-  .item-1 .image-wrapper,
-  .item-2 .image-wrapper,
-  .item-3 .image-wrapper,
-  .item-4 .image-wrapper,
-  .item-5 .image-wrapper,
-  .item-6 .image-wrapper {
-    aspect-ratio: 4 / 3;
+  .item {
+    margin-bottom: 14px;
   }
 
   /*

@@ -69,6 +69,7 @@
 
             <picture>
               <source
+                v-if="miembro.imagenName"
                 type="image/avif"
                 :srcset="`
                   ${'/imagenes/' + miembro.imagenName}-400.avif 400w,
@@ -79,6 +80,7 @@
               />
 
               <source
+                v-if="miembro.imagenName"
                 type="image/webp"
                 :srcset="`
                   ${'/imagenes/' + miembro.imagenName}-400.webp 400w,
@@ -304,7 +306,7 @@ const datosEquipo = [
     localidad: 'Córdoba',
     rol: 'Asistente técnico en ploteo vehicular.',
     imagen: nahuel,
-    imagenName: 'nahuel'
+    imagenName: null
   },
   {
     nombre: 'Damian Cornejo',
@@ -312,7 +314,7 @@ const datosEquipo = [
     localidad: 'Cordoba',
     rol: 'Asistente técnico en ploteo vehicular.',
     imagen: damian,
-    imagenName: 'Damian'
+    imagenName: null
   },
 
  

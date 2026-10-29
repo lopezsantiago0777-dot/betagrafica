@@ -145,22 +145,18 @@
             <div class="hero-text-column">
 
               <p>
-                Con el pasar de los años y ante la demanda,
-                Beta fue creciendo y se fueron incorporando
-                nuevos clientes de diferentes magnitudes.
+                Beta es una empresa dedicada a brindar soluciónes graficas integrales,
+                especializada en ploteo vehicular, carteleria
+                e impresion de gran formato.
+
               </p>
 
               <p>
-                Así logró consolidarse firmemente en el mercado,
-                dedicándose a la creación de piezas de alta
-                complejidad.
-              </p>
+                A traves de la evolución constante, la incorporación de tecnología y
+                el compromiso con la calidad, desarrollamos proyectos para
+                clientes de distintos sectores, combiando experiencia,
+                capacidad productiva y atención a cada detalle.
 
-              <p>
-                En el año <strong>2009</strong>, Fernando Pablo
-                Magnano, fundador y propietario, montó su planta
-                industrial que hoy cuenta con más de
-                <strong>600 m²</strong>.
               </p>
 
               <button class="editorial-button">
@@ -189,29 +185,8 @@
             <div class="hero-image">
 
               <picture>
-
-                <source
-                  type="image/avif"
-                  srcset="
-                    /imagenes/ploteado-400.avif 400w,
-                    /imagenes/ploteado-800.avif 800w,
-                    /imagenes/ploteado-1200.avif 1200w
-                  "
-                  sizes="(max-width: 768px) 100vw, 55vw"
-                />
-
-                <source
-                  type="image/webp"
-                  srcset="
-                    /imagenes/ploteado-400.webp 400w,
-                    /imagenes/ploteado-800.webp 800w,
-                    /imagenes/ploteado-1200.webp 1200w
-                  "
-                  sizes="(max-width: 768px) 100vw, 55vw"
-                />
-
                 <img
-                  src="/imagenes/ploteado.png"
+                  src="/imagenes/frentebeta.jpeg"
                   alt="Ploteo vehicular en planta"
                   loading="eager"
                 />
@@ -332,8 +307,11 @@
 
                 <p>
                   En el año <strong>2009</strong>, Fernando Pablo
-                  Magnano, fundador y propietario, montó su estructura de 
-                  <strong>350 m²</strong>.
+                  Magnano, fundador y propietario de
+                  <strong>Beta Grafica</strong>.
+                  Impulso el crecimiento de la empresa con la instalación
+                  de nuevo espacio productivo de <strong>350 m²</strong>,
+                  consolidando las bases de su desarrollo.
                 </p>
 
               </div>
@@ -354,9 +332,11 @@
                 </h3>
 
                 <p>
-                  El crecimiento sostenido de la empresa, nos obligo
-                  a expandirnos, por lo tanto, en el año <strong>2023</strong>
-                  inauguramos nuestra nueva planta en el parque industrial de San Francisco.
+                  El crecimiento sostenido de la empresa se vio reflejado
+                  en <strong>2023</strong> con la puesta en  marcha de una planta
+                  <strong>1000m²</strong> en el parque industrial de San Francisco, Córdoba.
+                  Ampliando su capacidad productiva y consolidando su presencia como unica
+                  empresa del rubro grafico dentro del complejo fabril.
                 </p>
 
               </div>
@@ -368,7 +348,7 @@
             <div class="history-block">
 
               <span class="history-index">
-                04
+                03
               </span>
 
               <div>
@@ -380,8 +360,9 @@
                 <p>
                   Nuestro ritmo operativo procesa un promedio
                   de <strong> 3.200 rotulaciones al año</strong>,
-                  alcanzando hasta 100 vehículos complejos por
-                  semana.
+                  alcanzando hasta 100 unidades complejos por
+                  semana en periodos de alta demanda, con un promedio
+                  de 20 minutos por unidad.
                 </p>
 
               </div>

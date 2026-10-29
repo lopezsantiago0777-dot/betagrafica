@@ -109,25 +109,25 @@ const slides = [
     type: 'video',
     eyebrow: 'BETA GRÁFICA',
     title: 'INDUSTRIA GRÁFICA',
-    description: 'Soluciones gráficas integrales con precisión micrométrica',
+    description: 'Soluciones gráficas integrales de alto impacto',
     buttonText: '',
     buttonLink: '/'
   },
   {
     id: 'nosotros',
     type: 'image',
-    image: 'fondonosotros.jpeg',
+    image: 'frentebeta.jpeg',
     eyebrow: 'SOBRE NOSOTROS',
     title: 'Calidad que se ve.',
     description:
-      'Calidad premium y precisión milimétrica en cada impresión desde 2001.',
+      'Tecnologia y calidad aplicadas a cada solucion grafica',
     buttonText: 'Conozca la Empresa',
     buttonLink: '/beta'
   },
   {
     id: 'servicios',
     type: 'image',
-    image: 'fondoploteados.jpeg',
+    image: 'policiasc.jpeg',
     eyebrow: 'SERVICIOS CORPORATIVOS',
     title: 'Precisión en cada detalle.',
     description:
@@ -138,34 +138,14 @@ const slides = [
   {
     id: 'portfolio',
     type: 'image',
-    image: 'fondocontacto.jpeg',
+    image: 'u c me.jpeg',
     eyebrow: 'PORTFOLIO DE PROYECTOS',
     title: 'Proyectos que hablan por nosotros.',
-    description: 'Garantía visual de nuestros desarrollos en campo.',
+    description: 'Transformamos ideas en soluciones gráficas que se destacan',
     buttonText: 'Ver Trabajos',
     buttonLink: '/fotos'
   },
-  {
-    id: 'pisos-1',
-    type: 'image',
-    image: 'pisos.jpeg',
-    eyebrow: 'EQUIPAMIENTOS COHESIVOS',
-    title: 'Superficies diseñadas para durar.',
-    description: 'Revestimientos y soluciones de alta durabilidad.',
-    buttonText: 'Ver Catálogo',
-    buttonLink: '/ventas'
-  },
-  {
-    id: 'pisos-2',
-    type: 'image',
-    image: 'pisos 2.jpeg',
-    eyebrow: 'ALTO TRÁNSITO',
-    title: 'Resistencia industrial.',
-    description:
-      'Soluciones pensadas para soportar las condiciones más exigentes.',
-    buttonText: 'Ver Catálogo',
-    buttonLink: '/ventas'
-  },
+
   {
     id: 'pisos-3',
     type: 'image',
@@ -173,14 +153,14 @@ const slides = [
     eyebrow: 'DISEÑO ESPECIAL',
     title: 'Diseño que transforma espacios.',
     description:
-      'Terminaciones especiales adaptadas a cada proyecto.',
+      'Soluciónes graficas aplicadas a proyectos reales.',
     buttonText: 'Ver Catálogo',
     buttonLink: '/ventas'
   },
   {
     id: 'pisos-4',
     type: 'image',
-    image: 'pisos (7).jpeg',
+    image: 'camiobeta.jpeg',
     eyebrow: 'REVESTIMIENTOS PREMIUM',
     title: 'Terminaciones de alto nivel.',
     description:

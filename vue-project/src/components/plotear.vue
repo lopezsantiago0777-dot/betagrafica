@@ -274,7 +274,7 @@
             <div class="story-columns">
               <p>
                 Gracias al constante desarrollo, incorporamos equipos de
-                impresión de última generación como los <strong>Roland DGA</strong>.
+                impresión de última generación como los <strong>Roland</strong>.
                 Con ello nació <strong>Plotear SRL</strong>, una nueva marca
                 dedicada en exclusiva a la impresión de vinilos, optimizando
                 costos y maximizando la productividad.
