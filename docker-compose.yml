@@ -37,9 +37,10 @@ services:
       - MAIL_PORT=${MAIL_PORT:-587}
       - MAIL_USE_TLS=${MAIL_USE_TLS:-True}
       - MAIL_USE_SSL=${MAIL_USE_SSL:-False}
-      - MAIL_USERNAME=${MAIL_USERNAME:-betagrafica60@gmail.com}
-      - MAIL_PASSWORD=${MAIL_PASSWORD:-zjalqzpxemcrirks}
-      - MAIL_DEFAULT_SENDER=${MAIL_DEFAULT_SENDER:-betagrafica60@gmail.com}
+      - MAIL_USERNAME=${MAIL_USERNAME:-}
+      - MAIL_PASSWORD=${MAIL_PASSWORD:-}
+      - MAIL_DEFAULT_SENDER=${MAIL_DEFAULT_SENDER:-}
+      - MAIL_TIMEOUT=${MAIL_TIMEOUT:-20}
       - ABSTRACT_API_KEY=${ABSTRACT_API_KEY:-}
     volumes:
       - uploads_data:/app/static/uploads

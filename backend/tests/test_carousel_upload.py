@@ -7,7 +7,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from app import app
+from app import app, enviar_email
 
 
 class DummyCursor:
@@ -82,6 +82,40 @@ class CarouselUploadTestCase(unittest.TestCase):
 
         saved_path = params[1]
         self.assertTrue(os.path.exists(os.path.join(self.tmpdir.name, saved_path)))
+
+    def test_email_is_not_sent_without_smtp_credentials(self):
+        original_config = {
+            key: app.config.get(key)
+            for key in ('MAIL_USERNAME', 'MAIL_PASSWORD', 'MAIL_DEFAULT_SENDER')
+        }
+        self.addCleanup(app.config.update, original_config)
+        app.config.update({
+            'MAIL_USERNAME': '',
+            'MAIL_PASSWORD': '',
+            'MAIL_DEFAULT_SENDER': None,
+        })
+
+        with patch('app.mail.send') as send:
+            self.assertFalse(enviar_email('Test', 'test@example.com', '<p>Test</p>'))
+
+        send.assert_not_called()
+
+    def test_email_sends_with_configured_smtp_credentials(self):
+        original_config = {
+            key: app.config.get(key)
+            for key in ('MAIL_USERNAME', 'MAIL_PASSWORD', 'MAIL_DEFAULT_SENDER')
+        }
+        self.addCleanup(app.config.update, original_config)
+        app.config.update({
+            'MAIL_USERNAME': 'sender@example.com',
+            'MAIL_PASSWORD': 'test-password',
+            'MAIL_DEFAULT_SENDER': 'sender@example.com',
+        })
+
+        with patch('app.mail.send') as send:
+            self.assertTrue(enviar_email('Test', 'test@example.com', '<p>Test</p>'))
+
+        send.assert_called_once()
 
 
 if __name__ == '__main__':

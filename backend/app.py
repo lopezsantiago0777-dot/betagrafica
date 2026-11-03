@@ -3,7 +3,6 @@ import uuid
 import re
 import secrets
 import hashlib
-import traceback
 import time
 from datetime import datetime, timedelta
 import requests
@@ -48,13 +47,17 @@ app.config['MAIL_SERVER'] = os.getenv('MAIL_SERVER', 'smtp.gmail.com')
 app.config['MAIL_PORT'] = int(os.getenv('MAIL_PORT', '587'))
 app.config['MAIL_USE_TLS'] = os.getenv('MAIL_USE_TLS', 'True').lower() in ('true', '1', 'yes', 'on')
 app.config['MAIL_USE_SSL'] = os.getenv('MAIL_USE_SSL', 'False').lower() in ('true', '1', 'yes', 'on')
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME', 'betagrafica60@gmail.com') #pipi6060 (Contraseña del gmail)
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD', 'zjalqzpxemcrirks')
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_DEFAULT_SENDER', app.config['MAIL_USERNAME'])
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME', '').strip()
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD', '').strip()
+app.config['MAIL_DEFAULT_SENDER'] = (
+    os.getenv('MAIL_DEFAULT_SENDER', '').strip()
+    or app.config['MAIL_USERNAME']
+    or None
+)
 app.config['MAIL_TIMEOUT'] = int(os.getenv('MAIL_TIMEOUT', '20'))
 
-if not app.config['MAIL_PASSWORD']:
-    print('⚠️ [SMTP] MAIL_PASSWORD no está configurada. Los correos no podrán enviarse.')
+if app.config['MAIL_USE_TLS'] and app.config['MAIL_USE_SSL']:
+    raise ValueError('SMTP no puede usar TLS y SSL al mismo tiempo.')
 
 # Inicialización de extensiones
 mail = Mail(app)
@@ -361,15 +364,19 @@ def obtener_o_crear_producto(conn, producto_id, nombre=None, precio=None, imagen
 
 def enviar_email(asunto, destinatario, cuerpo_html):
     """Envía un correo HTML mediante Flask-Mail y registra el error real si falla."""
+    missing_settings = [
+        setting
+        for setting in ('MAIL_USERNAME', 'MAIL_PASSWORD', 'MAIL_DEFAULT_SENDER')
+        if not app.config.get(setting)
+    ]
+    if missing_settings:
+        app.logger.error(
+            '[SMTP] Faltan variables de entorno requeridas: %s',
+            ', '.join(missing_settings)
+        )
+        return False
+
     try:
-        if not app.config.get('MAIL_USERNAME'):
-            print('🔴 [SMTP] MAIL_USERNAME no está configurado.')
-            return False
-
-        if not app.config.get('MAIL_PASSWORD'):
-            print('🔴 [SMTP] MAIL_PASSWORD no está configurada.')
-            return False
-
         msg = Message(
             subject=asunto,
             recipients=[destinatario],
@@ -378,16 +385,17 @@ def enviar_email(asunto, destinatario, cuerpo_html):
         )
 
         mail.send(msg)
-        print(f'📧 [SMTP] Correo enviado correctamente a {destinatario}')
+        app.logger.info('[SMTP] Correo enviado correctamente.')
         return True
 
-    except Exception as e:
-        print('🔴 [SMTP] ERROR ENVIANDO EMAIL')
-        print(f"   Servidor: {app.config.get('MAIL_SERVER')}:{app.config.get('MAIL_PORT')}")
-        print(f"   Usuario: {app.config.get('MAIL_USERNAME')}")
-        print(f"   TLS: {app.config.get('MAIL_USE_TLS')} | SSL: {app.config.get('MAIL_USE_SSL')}")
-        print(f'   Error: {type(e).__name__}: {e}')
-        traceback.print_exc()
+    except Exception:
+        app.logger.exception(
+            '[SMTP] Falló el envío (servidor=%s, puerto=%s, TLS=%s, SSL=%s).',
+            app.config.get('MAIL_SERVER'),
+            app.config.get('MAIL_PORT'),
+            app.config.get('MAIL_USE_TLS'),
+            app.config.get('MAIL_USE_SSL')
+        )
         return False
 
 
