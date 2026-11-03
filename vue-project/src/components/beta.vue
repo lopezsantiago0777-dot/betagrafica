@@ -159,7 +159,13 @@
 
               </p>
 
-              <button class="editorial-button">
+              <button
+                class="editorial-button"
+                type="button"
+                hidden
+                aria-haspopup="dialog"
+                @click="showMachineEvolution = true"
+              >
                 CONOCÉ MÁS
                 <span>→</span>
               </button>
@@ -499,6 +505,11 @@
       </svg>
     </a>
 
+    <EvolucionMaquinas
+      v-if="showMachineEvolution"
+      @close="showMachineEvolution = false"
+    />
+
   </div>
 </template>
 
@@ -506,8 +517,10 @@
 <script setup>
 
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import EvolucionMaquinas from './EvolucionMaquinas.vue'
 
 const videoRef = ref(null)
+const showMachineEvolution = ref(false)
 
 let videoObserver = null
 let revealObserver = null
